@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . .
 
 RUN go mod tidy
-RUN go build -o main .
+RUN go build -o main -ldflags "-s -w" .
 
 FROM scratch
 
